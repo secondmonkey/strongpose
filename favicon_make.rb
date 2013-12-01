@@ -7,7 +7,7 @@ options = {
   :root_dir => File.dirname(__FILE__),
   :input_dir => "favicons",
   :base_image => "favicon_base.png",
-  :output_dir => "favicons_output",
+  :output_dir => "favicons",
   :copy => false
 }
 
