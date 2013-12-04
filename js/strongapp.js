@@ -1,5 +1,6 @@
 var timeoutHandle;
 var currentpage;
+var delay = 1000; // milliseconds in a second - reduce for testing
 
 // Wait for device API libraries to load
 //
@@ -158,7 +159,7 @@ function timer(timerid, timeInSeconds, callback, format) {
     if (t % 4 == 0 && t != 0) {
       toggleBreathing();
     }
-    timeoutHandle = window.setTimeout(function() {timer(timerid, t, callback, format)},1000);
+    timeoutHandle = window.setTimeout(function() {timer(timerid, t, callback, format)},delay);
   }
   else if (t == 0) {
     resetBreathing();
