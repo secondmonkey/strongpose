@@ -58,8 +58,28 @@ function vibrate() {
   navigator.notification.vibrate(2000);
 }
 
+function showAllButtons() {
+  var buttons = document.getElementsByClassName('button');
+  for (var i = 0; i < buttons.length; i++) {
+    if (hasClass(buttons[i].id,'hidden')) {
+      buttons[i].classList.remove('hidden');
+    }
+  }
+}
+
+function hideAllCountIns() {
+  var countins = document.getElementsByClassName('countin');
+  for (var i = 0; i < countins.length; i++) {
+    if (!hasClass(countins[i].id,'hidden')) {
+      countins[i].classList.add('hidden')
+    }
+  }
+}
+
 function reset() {
   navigate('1');
+  showAllButtons();
+  hideAllCountIns();
 }
 
 function navigate(pagenum) {
@@ -135,9 +155,7 @@ function timer(timerid, timeInSeconds, callback, format) {
   if (t > 0) {
     t--;
     o.innerHTML = formatTime(t, format);   
-    if (t % 5 == 0 && t != 0) {
-      console.log(t);
-      console.log("toggling breathing");
+    if (t % 4 == 0 && t != 0) {
       toggleBreathing();
     }
     timeoutHandle = window.setTimeout(function() {timer(timerid, t, callback, format)},1000);
@@ -152,7 +170,7 @@ function resetBreathing() {
   var breathstructions = document.getElementsByClassName("breathing");
   for (var i = 0; i < breathstructions.length; i++) {
     var breathstruction = breathstructions[i];
-    breathstruction.innerHTML = "Take a deep breath..."
+    breathstruction.innerHTML = "Take a slow deep breath..."
   }
 }
 
@@ -161,14 +179,14 @@ function toggleBreathing() {
   var breathstructions = document.getElementsByClassName("breathing");
   for (var i = 0; i < breathstructions.length; i++) {
     var breathstruction = breathstructions[i];
-    if (breathstruction.innerHTML == "Take a deep breath...") {
-      breathstruction.innerHTML = "...breathe out";
+    if (breathstruction.innerHTML == "Take a slow deep breath...") {
+      breathstruction.innerHTML = "...exhale deeply";
     }
-    else if (breathstruction.innerHTML == "...breathe out") {
-      breathstruction.innerHTML = "breathe in...";
+    else if (breathstruction.innerHTML == "...exhale deeply") {
+      breathstruction.innerHTML = "inhale deeply...";
     }
-    else if (breathstruction.innerHTML == "breathe in...") {
-      breathstruction.innerHTML = "...breathe out";
+    else if (breathstruction.innerHTML == "inhale deeply...") {
+      breathstruction.innerHTML = "...exhale deeply";
     }
     else {
       break;
@@ -198,10 +216,13 @@ begin.addEventListener('click', function() {navigate('2')});
 begin.addEventListener('click', function() {resetDetails()});
 
 var start1 = document.getElementById("pose1start");
+start1.addEventListener('click', function() {toggle('pose1start')});
 start1.addEventListener('click', function() {timer("ready1",3, function(){ return nextPage(function() {timer("countdown1",40,ding)})},'simple')});
 
 var start2 = document.getElementById("pose2start");
+start2.addEventListener('click', function() {toggle('pose2start')});
 start2.addEventListener('click', function() {timer("ready2",3,function(){ return nextPage(function() {timer("countdown2",40,ding)})},'simple')});
 
 var start3 = document.getElementById("pose3start");
+start3.addEventListener('click', function() {toggle('pose3start')});
 start3.addEventListener('click', function() {timer("ready3",3,function(){ return nextPage(function() {timer("countdown3",40,ding)})},'simple')});
