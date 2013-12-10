@@ -1,126 +1,94 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" type="text/css" href="css/strongapp.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     <title>Strongpose</title>
   </head>
   <body>
-    <div class="app">
 
-      <div data-pagenum="1" id="page1" class="page hidden">
-        <h1>Strongpose</h1>
-        <p>Improve your performance in social situations by holding a few simple postures, for 2 minutes total:</p>
-          <ul>
-            <li>job interviews</li>
-            <li>presentations at work</li>
-            <li>meetings with clients</li>
-            <li>any stressful situation</li>
-          </ul>
-        <input class="button" id="startButton" type="button" value="Start" />
-        <a href="#" id="detaillink" onclick="toggle('details');return false;">the science...</a>
-        <div id="details" class="popup hidden">
-          <p>Several studies demonstrate that assuming open and expansive postures for as few as 2 minutes can change your stress and dominance hormone levels and dramatically improve performance in stressful social situations<sup>1,2</sup>. </p>
-          <p><a href="#" onclick="window.open('http://bit.ly/Hwt1hY', '_blank', 'location=yes');">Watch a 15 min video</a> of Dr. Amy Cuddy discussing her research.</p>
-          <div class="footnotes">
-            <p class="footnote" id="ft1"><span>1</span> <a href="#" onclick="window.open('http://bit.ly/1gfx5Sl', '_blank', 'location=yes');">Carney et al, 2010</a> Compared to poses that convey weakness, strength poses lead to measurable increases in testosterone and reductions in cortisol.</p>
-            <p class="footnote" id="ft2"><span>2</span> <a href="#" onclick="window.open('http://hvrd.me/1h49KnT', '_blank', 'location=yes');">Cuddy et al, 2012</a> (working paper) Significant improvements in performance on a stressful task following the same poses.</p>
-          </div>
-        </div>
+
+    <div class="row text-center jumbotron" id="splash">
+      <h1 class="text-center">Strongpose</h1>
+      <img class="img" src="./img/icon-transparent.png" alt="logo" />
+      <p class="lead text-center">Pose for 2 minutes. Perform better.</p>
+    </div>
+
+    <div class="container">
+    <div class="row">
+
+      <div class="col-md-6" id="content1">
+        <h3>The Science</h3>
+        <p class="lead">Recent science shows that posing in "high-power" postures significantly lowers cortisol levels and increases testosterone levels, as compared to "low-power" postures, and that holding these postures before a stressful event like a job interview leads to markedly better performance:</p>
+        <ul>
+          <li>
+            Carney, Dana R., Amy J.C. Cuddy, and Andy J. Yap. <a href="http://www.hbs.edu/faculty/Pages/item.aspx?num=37781">"Power Posing: Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance."</a> Psychological Science 21, no. 10 (October 2010): 1363–1368.
+          </li>
+          <li>
+            Cuddy, Amy J.C., Caroline A. Wilmuth, and Dana R. Carney. <a href="http://www.hbs.edu/faculty/Pages/item.aspx?num=43005">"Preparatory Power Posing Affects Performance and Outcomes in Social Evaluations."</a>  Harvard Business School Working Paper, No. 13-027, September 2012. (Revised November 2012.)
+          </li>
+      </ul>
       </div>
 
-<!-- First pose instructions and countdown -->
 
-      <div data-pagenum="2" id="page2" class="page hidden">
-        <div class="powermeter" id="empty"></div>
-        <p>Find a quiet place and assume this pose:</p>
-        <img src="./img/pose-1.jpg" alt="illustration of pose" />
-        <div class="instructions">
-          <ul>
-            <li>Hands on hips</li>
-            <li>Feet shoulder-width apart</li>
-            <li>Like a superhero</li>
-          </ul>
+      <div class="col-md-6" id="content2">
+        <h3>The App</h3>
+        <p>Inspired by this science, the Strongpose app guides you through a series of three postures for a total of 2 minutes (40 seconds each).</p>
+        <div id="posepreviews" class="text-center">
+          <img class="img-rounded pose-preview" src="./img/pose-1.jpg" alt="first pose"/>
+          <img class="img-rounded pose-preview" src="./img/pose-2.jpg" alt="first pose"/>
+          <img class="img-rounded pose-preview" src="./img/pose-3.jpg" alt="first pose"/>
         </div>
-        <input class="button" id="pose1start" type="button" value="Ready" />
-        <div class="countin" id="ready1"></div>
+        <p>Complete the postures at your desk using the <a href="./app.html">web version.</a></p>
+        <p>Or, for use out and about, download the iOS app <a href="#">here.</a></p>
       </div>
 
-      <div data-pagenum="3" id="page3" class="page hidden">
-        <p class="breathing" id="breath1">Take a deep breath...</p>
-        <img src="./img/pose-1.jpg" alt="illustration of pose" />
-        <div class="timer" id="timer1">
-          <div class="countdown" id='countdown1'>00:00</div>
-        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <h3 class="text-center">The Scientists</h3>
+
+              <div class="item col-lg-3">
+                <h5 class="text-center">Amy Cuddy</h5>
+                <img class="center-block img-circle" style="width: 140px; height :140px" src="./img/cuddy.jpg" alt="headshot of Dr. Cuddy"/>
+                <p><a href="http://www.hbs.edu/faculty/Pages/profile.aspx?facId=491042">Amy Cuddy</a> is an associate professor at Harvard Business School. Watch Dr. Cuddy's <a href="http://bit.ly/Hwt1hY'">15 minute Pop!Tech talk</a> or <a href="http://www.ted.com/talks/amy_cuddy_your_body_language_shapes_who_you_are.html">her 20 minute TED talk</a>.
+              </div>
+
+              <div class="item col-lg-3">
+                <h5 class="text-center">Dana Carney</h5>
+                <img class="center-block img-circle" style="width: 140px; height :140px" src="./img/carney.jpg" alt="headshot of Dr. Carney"/>
+                <p>Dana R. Carney is an assistant professor at University of California Berkeley Haas School of Business.</p>
+              </div>
+
+              <div class="item col-lg-3">
+                <h5 class="text-center">Caroline Wilmuth</h5>
+                <img class="center-block img-circle" style="width: 140px; height :140px" src="./img/wilmuth.jpg" alt="headshot of Caroline Wilmuth"/>
+                <p>Caroline Wilmuth is pursuing a Ph.D. in social psychology and organizational behavior as part of a joint program between the Department of Psychology and Harvard Business School.</p>
+              </div>
+
+              <div class="item col-lg-3">
+                <h5 class="text-center">Andy J. Yap</h5>
+                <img class="center-block img-circle" style="width: 140px; height :140px" src="./img/yap.jpg" alt="headshot of Dr. Yap"/>
+                <p><a href="http://www.andyjyap.com/">Andy J. Yap</a> is a Postdoctoral Associate and Lecturer at MIT Sloan School of Management</p>
+              </div>
       </div>
 
-<!-- Second pose instructions and countdown -->
+    <hr>
 
-      <div data-pagenum="4" id="page4" class="page hidden">
-        <div class="powermeter" id="onethird"></div>
-        <p>Nice! Here's the next one:</p>
-        <img src="./img/pose-2.jpg" alt="illustration of pose" />
-        <div class="instructions">
-            <ul>
-              <li>Hands behind head</li>
-              <li>Feet on the desk</li>
-              <li>You're the boss</li>
-            </ul>
-        </div>
-        <input class="button" id="pose2start" type="button" value="Ready" />
-        <div class="countin" id="ready2"></div>
-      </div>
+    <footer>
+      <p>&copy; Scott Forman 2013</p>
+    </footer>
 
-      <div data-pagenum="5" id="page5" class="page hidden">
-        <p class="breathing" id="breath2">Take a deep breath...</p>
-        <img src="./img/pose-2.jpg" alt="illustration of pose" />
-        <div class="timer" id="timer2">
-          <div class="countdown" id='countdown2'>00:00</div>
-        </div>
-      </div>
+  </div>
 
-<!-- Third pose instructions and countdown -->
-
-      <div data-pagenum="6" id="page6" class="page hidden">
-        <div class="powermeter" id="twothirds"></div>
-        <p>Excellent! Here's the last one:</p>
-        <img src="./img/pose-3.jpg" alt="illustration of pose" />
-        <div class="instructions">
-          <ul>
-            <li>Hands on desk</li>
-            <li>Leaning in</li>
-            <li>You're in charge</li>
-          </ul>
-        </div>
-        <input class="button" id="pose3start" type="button" value="Ready" />
-        <div class="countin" id="ready3"></div>
-      </div>
-
-      <div data-pagenum="7" id="page7" class="page hidden">
-        <p class="breathing" id="breath3">Take a slow deep breath...</p>
-        <img src="./img/pose-3.jpg" alt="illustration of pose" />
-        <div class="timer" id="timer3">
-          <div class="countdown" id='countdown3'>00:00</div>
-        </div>
-      </div>
-
-<!-- Completed -->
-
-      <div data-pagenum="8" id="page8" class="page hidden">
-        <div id="congrats">
-          <div class="powermeter" id="full"></div>
-          <p>You're ready. Good luck.</p>
-          <img src="./img/lion-small.jpg" alt="lion" />
-          <a href="#" onclick="reset();return false;">Again</a>
-          <p><a href="#" onclick="window.open('http://bit.ly/Hwt1hY', '_blank', 'location=yes');">Watch 15 min video</a> of Dr. Cuddy discussing her research.</p>
-        </div>
-      </div>
-
-</div> <!-- close main app div -->
-
-    <!--<script type="text/javascript" src="cordova.js"></script>-->
-    <script type="text/javascript" src="js/strongapp.js"></script>
+    <!--<script type="text/javascript" src="js/strongapp.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   </body>
 </html>
