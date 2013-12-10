@@ -8,3 +8,11 @@
 .pose-preview {
   width: 30%;
 }
+
+footer {
+  margin-bottom: 2em;
+}
+
+#title, #tagline {
+  color: #fff;
+}
