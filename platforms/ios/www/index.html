@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/strongapp.css" />
+    <title>Strongpose</title>
+  </head>
+  <body>
+    <div class="app">
+
+      <div data-pagenum="1" id="page1" class="page hidden">
+        <h1>Strongpose</h1>
+        <p>Improve your performance in social situations by holding a few simple postures, for 2 minutes total:</p>
+          <ul>
+            <li>job interviews</li>
+            <li>presentations at work</li>
+            <li>meetings with clients</li>
+            <li>any stressful situation</li>
+          </ul>
+        <input class="button" id="startButton" type="button" value="Start" />
+        <a href="#" id="detaillink" onclick="toggle('details');return false;">the science...</a>
+        <div id="details" class="popup hidden">
+          <p>Several studies demonstrate that assuming open and expansive postures for as few as 2 minutes can change your stress and dominance hormone levels and dramatically improve performance in stressful social situations<sup>1,2</sup>. </p>
+          <p><a href="#" onclick="window.open('http://bit.ly/Hwt1hY', '_blank', 'location=yes');">Watch a 15 min video</a> of Dr. Amy Cuddy discussing her research.</p>
+          <div class="footnotes">
+            <p class="footnote" id="ft1"><span>1</span> <a href="#" onclick="window.open('http://www.hbs.edu/faculty/Pages/item.aspx?num=37781', '_blank', 'location=yes');">Carney et al, 2010</a> Compared to poses that convey weakness, strength poses lead to measurable increases in testosterone and reductions in cortisol.</p>
+            <p class="footnote" id="ft2"><span>2</span> <a href="#" onclick="window.open('http://www.hbs.edu/faculty/Pages/item.aspx?num=43005', '_blank', 'location=yes');">Cuddy et al, 2012</a> (working paper) Significant improvements in performance on a stressful task following the same poses.</p>
+          </div>
+        </div>
+      </div>
+
+<!-- First pose instructions and countdown -->
+
+      <div data-pagenum="2" id="page2" class="page hidden">
+        <div class="powermeter" id="empty"></div>
+        <p>Find a quiet place and assume this pose:</p>
+        <img src="./img/pose-1.jpg" alt="illustration of pose" />
+        <div class="instructions">
+          <ul>
+            <li>Hands on hips</li>
+            <li>Feet shoulder-width apart</li>
+            <li>Like a superhero</li>
+          </ul>
+        </div>
+        <input class="button" id="pose1start" type="button" value="Ready" />
+        <div class="countin" id="ready1"></div>
+      </div>
+
+      <div data-pagenum="3" id="page3" class="page hidden">
+        <p class="breathing" id="breath1">Take a deep breath...</p>
+        <img src="./img/pose-1.jpg" alt="illustration of pose" />
+        <div class="timer" id="timer1">
+          <div class="countdown" id='countdown1'>00:00</div>
+        </div>
+      </div>
+
+<!-- Second pose instructions and countdown -->
+
+      <div data-pagenum="4" id="page4" class="page hidden">
+        <div class="powermeter" id="onethird"></div>
+        <p>Nice! Here's the next one:</p>
+        <img src="./img/pose-2.jpg" alt="illustration of pose" />
+        <div class="instructions">
+            <ul>
+              <li>Hands behind head</li>
+              <li>Feet on the desk</li>
+              <li>You're the boss</li>
+            </ul>
+        </div>
+        <input class="button" id="pose2start" type="button" value="Ready" />
+        <div class="countin" id="ready2"></div>
+      </div>
+
+      <div data-pagenum="5" id="page5" class="page hidden">
+        <p class="breathing" id="breath2">Take a deep breath...</p>
+        <img src="./img/pose-2.jpg" alt="illustration of pose" />
+        <div class="timer" id="timer2">
+          <div class="countdown" id='countdown2'>00:00</div>
+        </div>
+      </div>
+
+<!-- Third pose instructions and countdown -->
+
+      <div data-pagenum="6" id="page6" class="page hidden">
+        <div class="powermeter" id="twothirds"></div>
+        <p>Excellent! Here's the last one:</p>
+        <img src="./img/pose-3.jpg" alt="illustration of pose" />
+        <div class="instructions">
+          <ul>
+            <li>Hands on desk</li>
+            <li>Leaning in</li>
+            <li>You're in charge</li>
+          </ul>
+        </div>
+        <input class="button" id="pose3start" type="button" value="Ready" />
+        <div class="countin" id="ready3"></div>
+      </div>
+
+      <div data-pagenum="7" id="page7" class="page hidden">
+        <p class="breathing" id="breath3">Take a slow deep breath...</p>
+        <img src="./img/pose-3.jpg" alt="illustration of pose" />
+        <div class="timer" id="timer3">
+          <div class="countdown" id='countdown3'>00:00</div>
+        </div>
+      </div>
+
+<!-- Completed -->
+
+      <div data-pagenum="8" id="page8" class="page hidden">
+        <div id="congrats">
+          <div class="powermeter" id="full"></div>
+          <p>You're ready. Good luck.</p>
+          <img src="./img/lion-small.jpg" alt="lion" />
+          <a href="#" onclick="reset();return false;">Again</a>
+          <p><a href="#" onclick="window.open('http://bit.ly/Hwt1hY', '_blank', 'location=yes');">Watch 15 min video</a> of Dr. Cuddy discussing her research.</p>
+        </div>
+      </div>
+
+</div> <!-- close main app div -->
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/strongapp.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-45054338-2', 'secondmonkey.github.io');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
